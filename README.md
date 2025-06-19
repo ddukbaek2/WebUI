@@ -6,6 +6,10 @@
 
 
 ## 개발 스펙
+
+### 테스트 페이지
+- https://webui.ddukbaek2.com/
+
 ### 개발 환경
 - Unity6 (6000.0.50f1)
 - WebGL
