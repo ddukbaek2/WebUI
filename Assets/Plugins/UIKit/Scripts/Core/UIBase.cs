@@ -19,7 +19,26 @@ namespace UIKit
 		/// <summary>
 		/// UI 트랜스폼 프로퍼티.
 		/// </summary>
-		public RectTransform RectTransform => m_RectTransform;
+		public RectTransform RectTransform
+		{
+			get
+			{
+#if UNITY_EDITOR_OSX
+				if (didAwake)
+				{
+					return m_RectTransform;
+				}
+				else
+				{
+					if (m_RectTransform == null)
+						m_RectTransform = GetComponent<RectTransform>();
+					return m_RectTransform;
+				}
+#else
+				return m_RectTransform;
+#endif
+			}
+		}
 
 		/// <summary>
 		/// 생성됨.
@@ -29,6 +48,7 @@ namespace UIKit
 			base.Awake();
 
 			m_RectTransform = GetComponent<RectTransform>();
+			Debug.Log($"UIBase.Awake(): {name}");
 		}
 
 		/// <summary>
