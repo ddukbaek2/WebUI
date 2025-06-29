@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.ddukbaek2.uikit": {
+      "version": "https://github.com/ddukbaek2/UIKit.git#dev",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "2.0.0"
+      },
+      "hash": "e523760ecb61a7e6f155727bc5a226f1efd6e92e"
+    },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
       "depth": 1,
