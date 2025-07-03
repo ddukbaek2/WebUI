@@ -44,19 +44,23 @@ namespace UIKit
 		public void ResizeFrame(float size)
 		{
 			var sizeDelta = m_Top.rectTransform.sizeDelta;
+			sizeDelta.x = -(size * 2);
 			sizeDelta.y = size;
 			m_Top.rectTransform.sizeDelta = sizeDelta;
 
 			sizeDelta = m_Bottom.rectTransform.sizeDelta;
+			sizeDelta.x = -(size * 2);
 			sizeDelta.y = size;
 			m_Bottom.rectTransform.sizeDelta = sizeDelta;
 			
 			sizeDelta = m_Left.rectTransform.sizeDelta;
 			sizeDelta.x = size;
+			sizeDelta.y = -(size * 2);
 			m_Left.rectTransform.sizeDelta = sizeDelta;
 			
 			sizeDelta = m_Right.rectTransform.sizeDelta;
 			sizeDelta.x = size;
+			sizeDelta.y = -(size * 2);
 			m_Right.rectTransform.sizeDelta = sizeDelta;
 
 			sizeDelta = m_LeftTop.rectTransform.sizeDelta = sizeDelta;

@@ -16,7 +16,31 @@ public class UIScalableView : UIView
 	/// 드래그 중인지 여부.
 	/// </summary>
 	private bool m_IsDragging;
-	
+
+	/// <summary>
+	/// 생성됨.
+	/// </summary>
+	protected override void Awake()
+	{
+		base.Awake();
+
+		// m_View = CreateUIView<UIView>();
+		// m_View.RectTransform.SetParent(RectTransform);
+		m_DraggableFrame = AssetLoader.InstantiateWithComponentFromAssetPath<UIDraggableFrame>();
+		m_DraggableFrame.RectTransform.SetParent(RectTransform);
+	}
+
+	/// <summary>
+	/// 파괴됨.
+	/// </summary>
+	protected override void OnDestroy()
+	{
+		GameObject.Destroy(m_DraggableFrame.gameObject);
+		GameObject.Destroy(m_View.gameObject);
+
+		base.OnDestroy();
+	}
+
 	/// <summary>
 	/// 위치 변경됨.
 	/// </summary>
