@@ -29,7 +29,10 @@
 
 ### 도커 실행.
 ~~~bash
-sudo docker run --rm --detach com.ddukbaek2.webui --publish 12180:80 --volume /volume1/web/com.ddukbaek2.webui:/usr/share/nginx/html/ nginx:alpine
+IMAGE_NAME=""
+HOST_PORT=""
+HOST_HOME_DIRECTORY=""
+sudo docker run --rm --detach $IMAGE_NAME --publish $HOST_PORT:80 --volume $HOST_HOME_DIRECTORY:/usr/share/nginx/html/ nginx:alpine
 ~~~
 
 ## 이슈
