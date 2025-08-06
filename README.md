@@ -29,7 +29,7 @@
 
 ### 도커 실행.
 ~~~bash
-sudo docker run --rm --name {webappName} -p {port}:80 -v {workingDirectory}:/usr/share/nginx/html/ nginx:alpine
+sudo docker run --rm --detach com.ddukbaek2.webui --publish 12180:80 --volume /volume1/web/com.ddukbaek2.webui:/usr/share/nginx/html/ nginx:alpine
 ~~~
 
 ## 이슈
