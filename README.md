@@ -32,7 +32,8 @@
 IMAGE_NAME=""
 HOST_PORT=""
 HOST_HOME_DIRECTORY=""
-sudo docker run --rm --detach $IMAGE_NAME --publish $HOST_PORT:80 --volume $HOST_HOME_DIRECTORY:/usr/share/nginx/html/ nginx:alpine
+sudo docker run --rm --detach $IMAGE_NAME --publish $HOST_PORT:80\
+ --volume $HOST_HOME_DIRECTORY:/usr/share/nginx/html/ nginx:alpine
 ~~~
 
 ## 이슈
